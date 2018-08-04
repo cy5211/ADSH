@@ -22,7 +22,7 @@ from datetime import datetime
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 
-#cy
+#cy dg
 parser = argparse.ArgumentParser(description="ADSH demo")
 #parser.add_argument('--bits', default='12,24,32,48', type=str,
 #                   help='binary code length (default: 12,24,32,48)')
@@ -431,7 +431,7 @@ def adsh_algo(code_length):
     #training procedure finishes, evaluation
 
     torch.save(model, model_save_path)
-    print "model saved!"
+    print ("model saved!")
 
     model.eval()
 
@@ -480,7 +480,7 @@ def adsh_eval(code_length):
     testloader = DataLoader(
         dset_test, batch_size=1, shuffle=False, num_workers=4)
 
-    print "num test",num_test
+    #print ("num test",num_test)
     qB = encode(model, testloader, num_test, num_testing, code_length)
 
     #qB = V[0:1000]
@@ -491,7 +491,7 @@ def adsh_eval(code_length):
                            test_labels.numpy(),
                            database_labels.numpy())
 
-    print map
+    print (map)
     #logger.info('[Evaluation: mAP: %.4f]', map)
 
 
